@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Alef;
+}
+
+html {
+  background-color: white;
+  direction: rtl;
+  font-size: 62.5%;
+}
