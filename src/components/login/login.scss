@@ -1,3 +1,31 @@
 .login {
+  &_split {
+    &_buttons {
+      width: 30%;
 
+      &_header {
+        margin-left: 1rem;
+      }
+
+      &_actual {
+        margin-top: 20%;
+        text-align: center;
+
+        &_button {
+          border-radius: 1rem;
+          padding: .75rem;
+          font-size: 1rem;
+          font-weight: 700;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        &_or {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
