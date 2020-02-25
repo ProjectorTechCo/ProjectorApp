@@ -1,5 +1,7 @@
 .login {
   &_split {
+    display: flex;
+    justify-content: space-between;
     &_buttons {
       width: 30%;
 

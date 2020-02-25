@@ -1,4 +1,5 @@
 import React from "react";
+import Menu from "./menu/Menu";
 import "./login.scss";
 
 class Login extends React.PureComponent {
@@ -18,7 +19,9 @@ class Login extends React.PureComponent {
                             <button className={"login_split_buttons_actual_button"}>הזדמנות במחיר</button>
                         </div>
                     </div>
-                    <div className={"login_split_menu"}></div>
+                    <div className={"login_split_menu"}>
+                        <Menu />
+                    </div>
                 </div>
             </div>
         )
