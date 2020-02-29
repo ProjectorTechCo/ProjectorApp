@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 
+const projectsRoutes = require("./routes/projects");
+
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -10,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-
+app.use('/projects', projectsRoutes);
 app.use("/", express.static(path.join(__dirname+"/../src/views")));
 app.use("/images", express.static(path.join(__dirname+"/../src/images")));
 app.use("/fonts", express.static(path.join(__dirname+"/../src/fonts")));
