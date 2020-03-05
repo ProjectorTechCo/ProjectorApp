@@ -1,11 +1,11 @@
 const express = require("express");
 const GenericEntity = require("./../generic_entity");
 const router = express.Router();
-const PROJECTS = "comp_projects";
+const BUILDINGS = "comp_buildings";
 
-let genericEntity = new GenericEntity(PROJECTS);
+let genericEntity = new GenericEntity(BUILDINGS);
 
-router.get('/:proj_id?', genericEntity.selectAll("proj_id"));
+router.get('/:build_id?', genericEntity.selectAll("build_id"));
 
 module.exports = router;
 
