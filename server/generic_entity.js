@@ -20,6 +20,31 @@ class GenericEntity {
             });
         }
     }
+
+    selectByCondition() {
+        return (req, res) => {
+
+            res.status(200).json()
+        }
+    }
+
+    create() {
+        return (req, res) => {
+            res.status(200).json({})
+        }
+    }
+
+    update() {
+        return (req, res) => {
+            res.status(200).json({})
+        }
+    }
+
+    delete() {
+        return (req, res) => {
+            res.status(200).json({})
+        }
+    }
 }
 
 module.exports = GenericEntity;

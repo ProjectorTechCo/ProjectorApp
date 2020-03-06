@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-
 app.use('/projects', projectsRoutes);
 app.use('/buildings', buildingsRoutes);
 app.use('/applications', applicationsRoutes);

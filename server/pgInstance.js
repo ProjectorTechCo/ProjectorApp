@@ -11,10 +11,8 @@ class PgInstance {
             });
             let queryResult = (await pool.query(query, params));
             let result = queryResult.insertId ? queryResult.insertId : queryResult.rows;
-            console.log(result.insertId);
             return { status: 200, message: result };
         } catch (e) {
-            console.log(e.message)
             return {status: 500, message: e.message};
         }
     }
