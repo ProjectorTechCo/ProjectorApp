@@ -1,9 +1,9 @@
 const express = require("express");
 const GenericEntity = require("./../generic_entity");
 const router = express.Router();
-const APPLICATIONS = "comp_apps";
+const APARTMENTS = "comp_apps";
 
-let genericEntity = new GenericEntity(APPLICATIONS);
+let genericEntity = new GenericEntity(APARTMENTS);
 
 router.get('/:app_id?', genericEntity.selectAll("app_id"));
 
