@@ -12,9 +12,6 @@ module.exports = {
         'proj_url': String,
         'proj_extension_fields': Object,
         'proj_update_date': Date,
-        'proj_entrepreneur_ids': str,
-        'proj_contractor_ids': str,
-        'proj_update_version': Number,
-        'proj_contact_details': dict
+        'proj_update_version': Number
     }
 };

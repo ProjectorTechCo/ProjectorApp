@@ -5,6 +5,10 @@ class GenericEntity {
         this.entity = entity;
     }
 
+    select() {
+        return (req, res) => {}
+    }
+
     selectAll(param) {
         return (req, res) => {
             let argument = req.params[param];
@@ -40,8 +44,16 @@ class GenericEntity {
         }
     }
 
-    delete() {
+    delete(param) {
         return (req, res) => {
+            let argument = req.params[param];
+            PgInstance.action(`DELETE FROM ${this.entity} WHERE ${param} = ${argument}`).then(result => {
+                    let {status, message} = result;
+                    res.status(status).json(message);
+                }
+            ).catch(e => {
+                console.log(e);
+            });
             res.status(200).json({})
         }
     }
