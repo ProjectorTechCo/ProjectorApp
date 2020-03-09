@@ -1,4 +1,6 @@
 const PgInstance = require("./PgInstance");
+const queries = require("./queries");
+
 
 class GenericEntity {
     constructor(entity) {
