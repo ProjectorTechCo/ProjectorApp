@@ -1,5 +1,5 @@
 const express = require("express");
-const GenericEntity = require("./../generic_entity");
+const GenericEntity = require("../../../ProjectorEntityQuerier/generic_entity");
 const router = express.Router();
 const RESOURCES = "comp_resources";
 

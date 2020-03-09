@@ -3,11 +3,11 @@ const path = require("path");
 const bodyParser = require("body-parser");
 
 const projectsRoutes = require("./routes/projects");
-const buildingsRoutes = require("./routes/buildings");
-const apartmentsRoutes = require("./routes/apartments");
-const entrepreneursRoutes = require("./routes/entrepreneurs");
-const contractorsRoutes = require("./routes/contractors");
-const resourcesRoutes = require("./routes/resources");
+// const buildingsRoutes = require("./routes/buildings");
+// const apartmentsRoutes = require("./routes/apartments");
+// const entrepreneursRoutes = require("./routes/entrepreneurs");
+// const contractorsRoutes = require("./routes/contractors");
+// const resourcesRoutes = require("./routes/resources");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -18,11 +18,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/projects', projectsRoutes);
-app.use('/buildings', buildingsRoutes);
-app.use('/apartments', apartmentsRoutes);
-app.use('/entrepreneurs', entrepreneursRoutes);
-app.use('/contractors', contractorsRoutes);
-app.use('/resources', resourcesRoutes);
+// app.use('/buildings', buildingsRoutes);
+// app.use('/apartments', apartmentsRoutes);
+// app.use('/entrepreneurs', entrepreneursRoutes);
+// app.use('/contractors', contractorsRoutes);
+// app.use('/resources', resourcesRoutes);
 
 app.use("/", express.static(path.join(__dirname+"/../src/views")));
 app.use("/images", express.static(path.join(__dirname+"/../src/images")));
