@@ -1,11 +1,10 @@
 const express = require("express");
-const GenericEntity = require("../../../ProjectorEntityQuerier/generic_entity");
 const router = express.Router();
-const ENTREPRENEURS = "comp_entrepreneurs";
 
-let genericEntity = new GenericEntity(ENTREPRENEURS);
+const entityQuerier = require("./entity_querier");
+const ENTREPRENEURS = "entrepreneurs";
 
-router.get('/:ent_ids?', genericEntity.selectAll("ent_id"));
+router.get('/', entityQuerier.getQuery(ENTREPRENEURS));
 
 module.exports = router;
 
