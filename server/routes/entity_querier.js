@@ -23,7 +23,6 @@ const action = (entity, method, data) => {
 
 const getQuery = (entity) => {
   return (req, res) => {
-      console.log(req.query);
       action(entity, GET, req.query).then(response => {
               res.status(200).json(response.data);
           }
