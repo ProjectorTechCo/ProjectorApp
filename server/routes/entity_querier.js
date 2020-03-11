@@ -9,12 +9,16 @@ const DELETE = 'delete';
 // 10 seconds
 const DEFAULT_TIMEOUT = 10000;
 
-const action = (entity, method, data) => {
+const action = async(entity, method, data) => {
+    const currentConfig = await config.getConfig();
+    console.log(currentConfig);
     const requestParams = {
         method,
-        url: config.entity_querier + entity,
+        url: currentConfig.entityQuerier + entity,
         timeout: DEFAULT_TIMEOUT
     };
+
+    console.log(requestParams);
 
     requestParams[method === GET ? "params" : "data"] = data;
 
@@ -27,8 +31,7 @@ const getQuery = (entity) => {
               res.status(200).json(response.data);
           }
       ).catch(e => {
-          console.log(e.message);
-          res.status(500).send("Server Error.");
+          res.status(500).send(e.message);
       });
   }
 };

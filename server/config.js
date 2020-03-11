@@ -1,12 +1,30 @@
-const config = {
-    "dev": {
-        "entity_querier": "http://localhost:5000/"
-    },
-    "prod": {}
-};
+const axios = require("axios");
 
-const getConfig = () => {
-    return config[process.env.NODE_ENV] || config["dev"]
-};
+class Config {
+    constructor(serviceName) {
+        this.config = {
+            "dev": "http://localhost:7200/",
+            "prod": ""
+        };
+        this.serviceName = serviceName;
+    }
 
-module.exports = getConfig();
+    async fetchConfig(env=process.env.NODE_ENV) {
+        let params = {
+            env: env || "dev",
+            service: this.serviceName
+        };
+        return axios.get(this.config[env || "dev"] + "config", {params});
+    };
+
+    async getConfig() {
+        if (!this.fullConfig) {
+            this.fullConfig = (await this.fetchConfig()).data;
+        }
+        return this.fullConfig;
+    }
+}
+
+let config = new Config("app");
+
+module.exports = config;
